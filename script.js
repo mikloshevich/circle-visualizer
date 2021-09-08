@@ -84,10 +84,11 @@
         let angle = (Math.PI * 3) / segments;
 
         for (let i = 0; i < segments; i++) {
-            let barHeight = array[i] > 0 ? array[i]*1.6 : 1;
+            let barHeight = array[i] > 0 ? array[i]/1.4 : 1;
+
             // console.log(barHeight);
             // if (barHeight > ) {}
-            ctx.strokeStyle = `hsl(${barHeight}, 100%, 75%, ${barHeight*0.005})`;
+            ctx.strokeStyle = `hsl(${barHeight*array[i]/2}, 100%, 75%, ${barHeight*0.008})`;
             ctx.lineWidth = barHeight/10;
 
             let x1 = cnv.width / 2 + Math.cos(angle * i) * radius;
