@@ -107,7 +107,7 @@
     function update() {
         for (let i = 0; i < ringsNmbr; i++) {
             let radiusOffset = i * 6;
-            let angleOffset = (i * Math.PI / 180) * 8;
+            let angleOffset = (i * Math.PI / 180) * 6;
             draw(radiusOffset, angleOffset);
         }
     }
