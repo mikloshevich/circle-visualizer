@@ -80,7 +80,7 @@
         drawCircles(circleRadius);
 
         let segments = array.length / 2;
-        let radius = (cnv.height + array[0]*8) / 45 + radiusOffset;
+        let radius = (cnv.width + array[0]*8) / 45 + radiusOffset;
         let angle = (Math.PI * 3) / segments;
 
         for (let i = 0; i < segments; i++) {
