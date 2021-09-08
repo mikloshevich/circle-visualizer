@@ -81,14 +81,14 @@
 
         let segments = array.length / 2;
         let radius = (cnv.width + array[0]*8) / 45 + radiusOffset;
-        let angle = (Math.PI * 3) / segments;
+        let angle = (Math.PI * 2.6) / segments;
 
         for (let i = 0; i < segments; i++) {
-            let barHeight = array[i] > 0 ? array[i]/1.4 : 1;
+            let barHeight = array[i] > 0 ? array[i]/1.5 + (cnv.width*0.001) : 1;
 
             // console.log(barHeight);
             // if (barHeight > ) {}
-            ctx.strokeStyle = `hsl(${barHeight*array[i]/2}, 100%, 75%, ${barHeight*0.008})`;
+            ctx.strokeStyle = `hsl(${array[i]*3}, 100%, 75%, ${barHeight*0.008})`;
             ctx.lineWidth = barHeight/10;
 
             let x1 = cnv.width / 2 + Math.cos(angle * i) * radius;
