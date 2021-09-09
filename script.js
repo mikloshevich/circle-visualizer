@@ -95,7 +95,7 @@
 
             // console.log(barHeight);
             // if (barHeight > ) {}
-            ctx.strokeStyle = `hsl(${barHeight*3.65}, 100%, 75%, ${barHeight*0.008})`;
+            ctx.strokeStyle = `hsl(${barHeight*3.65}, 100%, 75%, ${barHeight*0.005})`;
             ctx.lineWidth = barHeight/10;
 
             let x1 = cnv.width / 2 + Math.cos(angle * i) * radius;
