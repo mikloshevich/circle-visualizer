@@ -2,7 +2,7 @@
     const dotBox = document.querySelector('.dot-box');
 
     const actx = new AudioContext();
-    const num = 512;
+    const num = 256;
 
     // const analyser = actx.createAnalyser();
     const analyser = new AnalyserNode(actx, {
@@ -86,7 +86,7 @@
         }
         drawCircles(circleRadius);
 
-        let segments = array.length / 2;
+        let segments = array.length;
         let radius = (cnv.width + array[0]*8) / 45 + radiusOffset;
         let angle = (Math.PI * 3) / segments;
 
@@ -95,7 +95,7 @@
 
             // console.log(barHeight);
             // if (barHeight > ) {}
-            ctx.strokeStyle = `hsl(${barHeight*3.65}, 68%, 74%, ${barHeight*0.0045})`;
+            ctx.strokeStyle = `hsl(${360 - (barHeight*3.63)}, 69%, 74%, ${barHeight*0.0045})`;
             ctx.lineWidth = barHeight/10;
 
             let x1 = cnv.width / 2 + Math.cos(angle * i) * radius;
