@@ -2,10 +2,17 @@
     const dotBox = document.querySelector('.dot-box');
 
     const actx = new AudioContext();
-    const analyser = actx.createAnalyser();
+    const num = 512;
 
-    const num = 256;
-    analyser.fftSize = num;
+    // const analyser = actx.createAnalyser();
+    const analyser = new AnalyserNode(actx, {
+        fftSize: num,
+        minDecibels: -90,
+        maxDecibels: -25,
+        smoothingTimeConstant: 0.85,
+    });
+
+    // analyser.fftSize = num;
     // analyser.minDecibels = -90;
     // analyser.maxDecibels = 0;
     // let bufferLength = analyser.fftSize;
@@ -84,11 +91,11 @@
         let angle = (Math.PI * 3) / segments;
 
         for (let i = 0; i < segments; i++) {
-            let barHeight = array[i] > 0 ? array[i]/1.5 + (cnv.width*0.001) : 1;
+            let barHeight = array[i] > 0 ? array[i]/1.5 + (cnv.width*0.005) : 1;
 
             // console.log(barHeight);
             // if (barHeight > ) {}
-            ctx.strokeStyle = `hsl(${array[i]*3}, 100%, 75%, ${barHeight*0.008})`;
+            ctx.strokeStyle = `hsl(${barHeight*3.65}, 100%, 75%, ${barHeight*0.008})`;
             ctx.lineWidth = barHeight/10;
 
             let x1 = cnv.width / 2 + Math.cos(angle * i) * radius;
